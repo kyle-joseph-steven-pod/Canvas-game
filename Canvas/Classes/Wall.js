@@ -2,8 +2,8 @@ class Wall {
     constructor(ammount) {
         this.body = [];
         for(let count=0;count<ammount;count++) {
-            this.x = ceil(random(w - 1));
-            this.y = ceil(random(h - 1));
+            this.x = floor(random(w-1));
+            this.y = floor(random(h-1));
             this.h = ceil(random(3));
             this.w = ceil(random(3));
             for (let i = 0; i < this.h; i++) {

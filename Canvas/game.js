@@ -61,6 +61,7 @@ function draw() {
     hero.fight(baddy);
     wall.show();
     baddy.show();
+    baddy.update();
     hero.update();
     hero.show();
 }
