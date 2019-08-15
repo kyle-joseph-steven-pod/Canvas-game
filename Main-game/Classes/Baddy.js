@@ -9,20 +9,19 @@ class Baddy {
         let x = (floor(random(w-1)));
         let y = (floor(random(h-1)));
         this.body = createVector(x, y);
-        if (baddy.hitWall(wall)) {
+        if (this.hitWall(wall)) {
             this.baddyLocation();
         }
+        background(255,0,0)
     }
     update(){
         let Hx = hero.body.x;
         let Hy = hero.body.y;
         let Bx = this.body.x;
         let By = this.body.y;
-        print(dist(Bx, By, Hx, Hy));
         let chance = floor(random(100));
-        if(chance < 1) {
+        if(chance < 5) {
             if (dist(Bx, By, Hx, Hy) < 10) {
-                print("Iwanna move!");
                 let rand = floor(random(2));
                 if (Bx <= Hx && By <= Hy) {
                     if (rand === 0 && Bx !== Hx) {
