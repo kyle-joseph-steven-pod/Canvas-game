@@ -1,26 +1,33 @@
-let rez = 100;
+let rez = 50;
 let h;
 let w;
 let hero;
 let wall;
-let baddy;
+let baddy = [];
+let baddyAmount = 4;
 // img var
 let Player;
 let wallIn;
 let enemy;
+
 function preload() {
-    Player = loadImage('Picture/Mis-standing-Normalized.png ');
-    wallIn = loadImage("Picture/bg-1.jpg");
-    enemy = loadImage("Picture/Mis-skull-Normalized.png")
+    Player = loadImage('img/Mis-standing-Normalized.png ');
+    wallIn = loadImage("img/bg-1.jpg");
+    enemy = loadImage("img/Mis-skull-Normalized.png")
 }
 function setup() {
-    createCanvas(1450, 500);
+    createCanvas(1400, 700);
+    frameRate(20);
     w = width / rez;
     h = height / rez;
     hero = new Hero();
-    wall = new Wall(4);
-    baddy = new Baddy();
-    baddy.baddyLocation();
+    wall = new Wall(20);
+    for(let i=0;i<baddyAmount;i++){
+        baddy[i] = new Baddy();
+        }
+    for(let i=0;i<baddyAmount;i++) {
+        baddy[i].baddyLocation();
+    }
 }
 
 function keyPressed() {
@@ -58,10 +65,14 @@ function keyPressed() {
 function draw() {
     scale(rez);
     background(255);
-    hero.fight(baddy);
+    for(let i=0;i<baddyAmount;i++){
+        hero.fight(baddy[i]);
+    }
     wall.show();
-    baddy.show();
-    baddy.update();
+    for(let i=0;i<baddyAmount;i++) {
+        baddy[i].show();
+        baddy[i].update();
+    }
     hero.update();
     hero.show();
 }
