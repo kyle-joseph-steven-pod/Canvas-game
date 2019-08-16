@@ -4,6 +4,7 @@ let w;
 let hero;
 let wall;
 let baddy = [];
+// adjustable counter for amount of enemies
 let baddyAmount = 4;
 // img var
 let Player;
@@ -21,6 +22,7 @@ function setup() {
     w = width / rez;
     h = height / rez;
     hero = new Hero();
+    //adjustable counter for amount of wall arrays
     wall = new Wall(20);
     for(let i=0;i<baddyAmount;i++){
         baddy[i] = new Baddy();

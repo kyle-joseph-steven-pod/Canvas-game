@@ -20,6 +20,7 @@ class Hero {
     //updates the postion on the canvas based on x + y coords
     show() {
         image(Player, this.body.x, this.body.y, 1, 1);
+
         // makeShadow(this.body.x, this.body.y);
     }
     //updates the player x + y coords;
