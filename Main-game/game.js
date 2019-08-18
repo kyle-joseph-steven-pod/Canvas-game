@@ -4,7 +4,7 @@ let w;
 let hero;
 let wall;
 let baddy = [];
-let baddyAmount = 4;
+let baddyAmount = 5;
 // img var
 let Player;
 let wallIn;

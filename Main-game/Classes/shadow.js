@@ -1,6 +1,6 @@
 let makeShadow = function(x,y){
     let img = createImage(w*2+25, w*2+25);
-    img.loadPixels();
+    // img.loadPixels();
     for (let i = 0; i < img.width; i++) {
         for (let j = 0; j < img.height; j++) {
             if(i <= img.width/2 && j <= img.width/2){
@@ -15,5 +15,5 @@ let makeShadow = function(x,y){
         }
     }
     img.updatePixels();
-    image(img, x-img.width/2,y-img.height/2);
+    // image(img, x-img.width/2,y-img.height/2);
 };
